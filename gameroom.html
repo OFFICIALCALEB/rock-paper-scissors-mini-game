@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./node_modules/venobox/dist/venobox.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+    <title>Game Room</title>
+</head>
+
+<body class="bg-primary">
+
+    <!-- Box start -->
+    <section class="container-fluid">
+        <div class="row d-flex justify-content-center ">
+            <div class="col-12 col-lg-7">
+                <div class="d-flex justify-content-between mt-3 p-3 mb-5 rounded border ">
+                    <div class="">
+                        <img src="./images/logo.svg" alt="">
+                    </div>
+                    <div class="bg-white px-3 py-2 rounded">
+                        <div class="" id="textP">
+                            <p class="text-black-50 text-uppercase fw-bold fs-3">score</p>
+                            <h1 id="scoreText" class="text-black fw-bolder text-center"
+                                style="font-family: 'Red Hat Display', sans-serif;">0</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Box end -->
+
+    <!-- traingle start -->
+    <section id="fadeOutTraingle" class="container-fluid img-traingle">
+        <div class="row">
+            <div class="col-12">
+                <div class="row text-center">
+                    <div class="col-6">
+                        <button class="btn-check aa1 " value="1" id="aa1"></button>
+                        <div id="dangerId" class=" btn btn-outline-danger rounded-circle  p-4 animate__animated animate__fadeInLeft animate-delay">
+                            <label class="btn btn-light rounded-circle p-5 " for="aa1">
+                                <img src="./images/icon-rock.svg" alt="">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-check aa2" value="2" id="aa2"></button>
+                        <div id="infoId" class="btn btn-outline-info rounded-circle  p-4 animate__animated animate__fadeInRight animate-delay">
+                            <label class="btn btn-light rounded-circle p-5" for="aa2">
+                                <img src="./images/icon-paper.svg" alt="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button class="btn-check aa3" value="3" id="aa3"></button>
+                        <div id="warningId" class="btn btn-outline-warning rounded-circle  p-4 animate__animated animate__fadeInUp animate__delay-1s">
+                            <label class="btn btn-light rounded-circle p-5" for="aa3">
+                                <img src="./images/icon-scissors.svg" alt="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- traingle end -->
+
+    <!-- look result start -->
+    <section class="container-fluid p-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center ">
+                    <button id="result" class="btn btn-outline-success px-5 py-3 fw-bold text-uppercase">Result</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- look result end -->
+
+    <!-- Rules start -->
+    <section class="container-fluid p-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-end flex-column align-items-end">
+                    <div class="">
+                        <i id="volumeControl"
+                            class="fas fa-volume-xmark fa-3x text-light icon-vol-mobile me-3 px-3 py-3"></i>
+                    </div>
+                    <div class="">
+                        <a class="my-link" href="./images/image-rules.svg">
+                            <button class="btn btn-outline-light px-5 py-3">Rules</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Rules end -->
+
+    <!-- match start -->
+    <section id="fadeInTraingle" class="container-fluid">
+        <div class="row ">
+            <div class="col-12">
+                <div class="d-flex flex-column-reverse flex-lg-column flex-xl-column text-center ">
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-10 col-lg-7 col-xl-7">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="text-uppercase text-light fw-bold text-center fs-3">You Picked</h5>
+                                <h5 class="text-uppercase text-light fw-bold text-center fs-3">The Computer Picked
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h1 class="text-warning fw-bold fs-1 text-uppercase" id="textMatch" style="letter-spacing:0.1rem ;"></h1>
+                        <div class="d-flex justify-content-center p-">
+                            <button id="playAgain" class="btn btn-outline-light text-uppercase fw-bold px-4 py-3">play
+                                again</button>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-6">
+                            <div id="playerLoop"></div>
+                        </div>
+                        <div class="col-6">
+                            <div id="computerLoop"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- match end -->
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/venobox/dist/venobox.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        new VenoBox();
+        new VenoBox({
+            selector: ".my-link"
+        });
+    </script>
+</body>
+
+</html>

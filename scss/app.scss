@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+};
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+$font-family-sans-serif: 'Cormorant Garamond', serif;
+
+body {
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+$primary: #012747;
+$info : hsl(230, 89%, 62%);
+$warning: hsl(39, 89%, 49%);
+$danger : hsl(349, 71%, 52%);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+.img-traingle {
+    background-image: url(../images/bg-triangle.svg);
+    background-size: cover;
+    max-width: 480px !important;
+}
+.bg-3D {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles {
+    position: relative;
+    display: flex;
+}
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+.animate-delay {
+    animation-delay: 0.3s;
+}
+@media screen and(max-width:580px) {
+    .bubbles span {
+        height: 0px !important;
+    }
+    .img-home-three {
+        width: 200px !important;
+    }
+    .home-game {
+        font-size: 71px !important;
+        text-align: center;
+    }
+}
